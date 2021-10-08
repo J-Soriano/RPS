@@ -3,8 +3,9 @@ const rpsval = ['rock', 'paper', 'scissors'];
 let computerSelection = ''; //computerPlay()
 let playerSelection = ''; //playerPrompt()
 let gameStat = '';
-//let gameFinP = 0;
-//let gameFinC = 0;
+let gameFinP = 0;
+let gameFinC = 0;
+let gameCount = 0;
 
 
 
@@ -20,7 +21,7 @@ function playerPrompt() {
     playerPrompt();
   } else if (inp1 === null || inp1 == "exit"){
     console.log("You have left the game.");
-    //let gameStat = "end";
+    //let gameStat = "end"; Why can't I assign value directly to gamestat?
     let arp1 = "end"
     gameStat = arp1;
     return false;
@@ -37,7 +38,7 @@ function playerPrompt() {
         }
   }
   }
-
+//Function for one round of RPS
 function playRound(){
   //console.log("test func for player: " + playerSelection);
   //console.log("test func for computer: " + computerSelection);
@@ -45,78 +46,48 @@ function playRound(){
   if (playerPrompt() != false){
     if (playerSelection == computerSelection){
         console.log("We have a tie!");
+        gameCount++;
         } else if (playerSelection=="rock" && computerSelection=="scissors" || playerSelection=="paper" && computerSelection=="rock" || playerSelection=="scissors" && computerSelection=="paper"){
           console.log("You have won this round!");
-          //gameFinP++;
+          gameFinP++;
+          gameCount++;
         } else {
           console.log("You have lost this round!");
-          //gameFinC++;
+          gameFinC++;
+          gameCount++;
         }
       }
   }
 
+
+//Function to play a game of Rock, paper, scissors
 function playGame(){
-    for (i = 1; i < 4; i++) {
-    if (gameStat != "end"){
-      console.log(i);
-      playRound();
-    } else if (gameStat = "end") {
-        break;
+  for (i = 1; i < 20; i++) {
+    if (gameStat == "end"){
+    break;
+
+  } else if (gameFinP == 3){
+    console.log("You have won the game!");
+    break;
+  } else if (gameFinC == 3){
+    console.log("You have lost the game!");
+    break;
+  } else if (gameCount == 5 && gameFinP > gameFinC){
+    console.log("You have won the game!");
+    break;
+  } else if (gameCount == 5 && gameFinC > gameFinP){
+    console.log("You have lost the game!");
+    break;
+  } else if (gameCount == 5 && gameFinP == gameFinC){
+    console.log("The game is a Tie!");
+    break;
+  } else {
+    playRound();
+    //console.log("This is games won by computer: " +gameFinC);
+    //console.log("This is games won by you: " + gameFinP);
+    //console.log("This is total amount of games: " + gameCount);
   }
-}
+  }
 }
 
 playGame();
-
-
-/*
-
-function playGame(){
-    for (i = 1; i < 6; i++) {
-    if (gameStat != "end" && gameFinC !=3 && gameFinP !=3){
-      playRound();
-    } else if (gameStat = "end") {
-        break;
-    } else if (gameFinC = 3){
-        console.log("You have lost the game!");
-    } else if (gameFinP = 3) {
-        console.log("You have won the game!");
-    }
-  }
-}
-
-
-*/
-
-/*if (playerSelection == "rock" || playerSelection == "paper" || playerSelection == "scissors"){
-    console.log("You have chosen " + playerSelection + ".");
-    console.log("The computer has chosen " + computerSelection + ".");
-    console.log(playGame());
-    } else {
-      console.log("You did not choose rock, paper, or scissors.");
-    }
-
-
-    function playGame(){
-      for (i = 1; i < 3; i++) {
-      console.log(i);
-      console.log("Round Start.");
-      playRound();
-      console.log("Round End.");
-      }
-    }
-
-    if (playerSelection == computerSelection){
-        console.log("We have a tie!");
-        } else if (playerSelection=="rock" && computerSelection=="scissors" || playerSelection=="paper" && computerSelection=="rock" || playerSelection=="scissors" && computerSelection=="paper"){
-          console.log("You have won this round!");
-        } else {
-          console.log("You have lost this round!");
-        }
-      }
-
-
-
-
-
-    */
