@@ -1,0 +1,45 @@
+:root {
+
+
+
+
+}
+
+* {
+  color: white;
+  background-color: black;
+  margin: 0;
+  padding: 0;
+}
+
+div {
+  text-align: center;
+}
+
+div h1{
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+button {
+  display: inline-block;
+  margin-right: 25px;
+  height: 300px;
+  width: 200px;
+  /*gap?*/
+}
+
+#rockImg {
+    background-image: url("imgs/rps-rock.jpg");
+    background-size: 200px 300px;
+    /*background-size: contain;*/
+    /**/
+}
+#paperImg {
+    background-image: url("imgs/rps-paper.jpg");
+    background-size: 200px 300px;
+}
+#scissorsImg {
+    background-image: url("imgs/rps-scissors.jpg");
+    background-size: 200px 300px;
+}
