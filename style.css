@@ -1,45 +1,102 @@
-:root {
-
-
-
-
-}
+/*:root {
+} */
 
 * {
   color: white;
   background-color: black;
   margin: 0;
   padding: 0;
+
+}
+body{
+  font-family: 'Fuzzy Bubbles', sans-serif;
 }
 
-div {
+main {
   text-align: center;
 }
 
-div h1{
-  margin-top: 20px;
+h1{
+  text-align: center;
+  margin-top: 50px;
   margin-bottom: 30px;
+  font-size: 50px;
+}
+
+.scoreSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+
+}
+
+.playerSection{
+  border: 5px solid blue;
+  margin: 20px;
+  padding: 10px 10px;
+  width: 200px;
+  margin-left: 200px;
+  border-radius: 8px;
+
+}
+
+.computerSection {
+  border: 5px solid red;
+  margin: 20px;
+  padding: 10px 10px;
+  width: 200px;
+  margin-right: 200px;
+  border-radius: 8px;
+}
+
+.scoreNum {
+  margin: 10px;
+  font-size: 30px;
+  font-family: serif;
+}
+
+#rpsMessage {
+  font-size: 20px;
+
+}
+
+.gameSection {
+  display: flex;
+  justify-content: center;
 }
 
 button {
-  display: inline-block;
-  margin-right: 25px;
-  height: 300px;
-  width: 200px;
+  margin: 50px 10px 50px 10px;
+  height: 150px;
+  width: 100px;
+  border-radius: 8px;
   /*gap?*/
 }
-
-#rockImg {
+#rockBtn {
     background-image: url("imgs/rps-rock.jpg");
-    background-size: 200px 300px;
+    background-size: cover;
+    background-repeat: no-repeat;
     /*background-size: contain;*/
     /**/
 }
-#paperImg {
+#paperBtn {
     background-image: url("imgs/rps-paper.jpg");
-    background-size: 200px 300px;
+    background-size: cover;
 }
-#scissorsImg {
+#scissorsBtn {
     background-image: url("imgs/rps-scissors.jpg");
-    background-size: 200px 300px;
+    background-size: cover;
+
+}
+
+.footer {
+  position: fixed;
+  text-align: center;
+  bottom: 0;
+  width: 100%;
+  margin: 20px;
+  color: white;
+  font-size: 20px;
+  font-family: serif;
 }

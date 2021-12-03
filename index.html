@@ -4,24 +4,44 @@
 <head>
   <title>Rock, Paper, Scissors</title>
   <meta charset="UTF-8"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="A game of Rock, Paper, Scissors">
   <meta name="author" content="J-S">
-</head>
-
-<body>
-  <h1>Rock, Paper, Scissors</h1>
-  <main>
-    <div class="scoreBoard">
-
-    </div>
-
-  </main>
-    <button id="rockImg" type="button"></button>
-    <button id="paperImg" type="button"></button>
-    <button id="scissorsImg" type="button"></button>
   <script src="rps.js" defer></script>
+</head>
+<body>
+  <main class="main">
+    <h1>Rock, Paper, Scissors</h1>
+    <div class="topSection">
+      <div class="scoreSection">
+        <div class="playerSection">
+          <h2>Player Score:</h2>
+          <p class="scoreNum" id="playerScore">0</p>
+        </div>
+        <div>
+          <p id="rpsMessage">Welcome to a game of rock, paper, scissors! <br>Please select one of the options below to begin.</p>
+        </div>
+        <div class="computerSection">
+          <h2>Computer Score:</h2>
+          <p class="scoreNum" id="computerScore">0</p>
+        </div>
+      </div>
+    </div>
+    <div class="gameSection">
+      <div class="buttons">
+        <button id="rockBtn" type="button"></button>
+        <button id="paperBtn" type="button"></button>
+        <button id="scissorsBtn" type="button"></button>
+      </div>
+    </div>
+  </main>
+  <footer class="footer">
+    <p>Copyright © 2021 J-S</p>
+  </footer>
 </body>
 
 </html>
