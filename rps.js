@@ -1,5 +1,4 @@
 //Game code
-
 const rpsval = ['rock', 'paper', 'scissors'];
 const computerSelection = '';
 const playerSelection = '';
@@ -35,6 +34,7 @@ function playRound(playerSelection, computerSelection){
     roundWin = 'computer';
   }
 }
+
 //Tells player whether the won the round or not
 function updateScore(playerSelection, computerSelection){
   if(roundWin == 'tie'){
@@ -46,18 +46,19 @@ function updateScore(playerSelection, computerSelection){
   } else if (roundWin == 'computer') {
     rpsMsg.textContent = "You lost!";
     rpsSelection.innerHTML = "You chose: "+ playerSelection + "<br>The computer chose: " +computerSelection;
-
   }
   playScore.textContent = playerScore;
   compScore.textContent = computerScore;
   console.log(playerSelection+ "test");
 }
+
 //Determines whether the game is over
 function gameOver() {
   if(playerScore == 5 || computerScore == 5){
       return true;
     }
   }
+
 //Displays who won the whole game
   function checkWinner(){
     if (playerScore == 5) {
@@ -66,6 +67,7 @@ function gameOver() {
       rpsMsg.textContent = "You have lost the game! Select Rock, Paper, or Scissors to restart game.";
     }
   }
+
 //Restart function so that the player can continue playing
   function gameRestart(){
   playerScore = 0
