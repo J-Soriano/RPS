@@ -36,16 +36,21 @@ function playRound(playerSelection, computerSelection){
   }
 }
 //Tells player whether the won the round or not
-function updateScore(){
+function updateScore(playerSelection, computerSelection){
   if(roundWin == 'tie'){
     rpsMsg.textContent = "It is a tie!";
+    rpsSelection.innerHTML = "You chose: "+ playerSelection + "<br>The computer chose: " +computerSelection;
   } else if (roundWin == 'player'){
     rpsMsg.textContent = "You won!";
+    rpsSelection.innerHTML = "You chose: "+ playerSelection + "<br>The computer chose: " +computerSelection;
   } else if (roundWin == 'computer') {
     rpsMsg.textContent = "You lost!";
+    rpsSelection.innerHTML = "You chose: "+ playerSelection + "<br>The computer chose: " +computerSelection;
+
   }
   playScore.textContent = playerScore;
   compScore.textContent = computerScore;
+  console.log(playerSelection+ "test");
 }
 //Determines whether the game is over
 function gameOver() {
@@ -68,6 +73,7 @@ function gameOver() {
   rpsMsg.innerHTML = 'Welcome to a game of rock, paper, scissors! <br>Please select one of the options below to begin.';
   playScore.textContent = 0;
   compScore.textContent = 0;
+  rpsSelection.innerHTML = '';
   }
 
 //Links to UI
@@ -77,6 +83,7 @@ const scissorsBtn = document.getElementById('scissorsBtn');
 const rpsMsg = document.getElementById('rpsMessage');
 const compScore = document.getElementById('computerScore');
 const playScore = document.getElementById('playerScore');
+const rpsSelection = document.getElementById('rpsSelection');
 
 rockBtn.addEventListener("click", () => clickStart("rock"));
 paperBtn.addEventListener("click", () => clickStart("paper"));
@@ -92,7 +99,7 @@ function clickStart(playerSelection) {
   console.log("You have chosen: " + playerSelection);
   console.log("The computer has chosen: " + computerSelection);
   playRound(playerSelection, computerSelection);
-  updateScore();
+  updateScore(playerSelection, computerSelection);
   checkWinner();
 
 }
