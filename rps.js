@@ -7,13 +7,13 @@ let roundWin = '';
 let playerScore = 0;
 let computerScore = 0;
 
-
+//random value for computer selection
 function computerPlay() {
   let randval = rpsval[Math.floor(Math.random() * rpsval.length)];
   return randval;
 }
 
-
+//Function to determine who reaches 5 poitns first
 function playRound(playerSelection, computerSelection){
   if (playerSelection == computerSelection){
     roundWin = "tie";
@@ -35,7 +35,7 @@ function playRound(playerSelection, computerSelection){
     roundWin = 'computer';
   }
 }
-
+//Tells player whether the won the round or not
 function updateScore(){
   if(roundWin == 'tie'){
     rpsMsg.textContent = "It is a tie!";
@@ -47,13 +47,13 @@ function updateScore(){
   playScore.textContent = playerScore;
   compScore.textContent = computerScore;
 }
-
+//Determines whether the game is over
 function gameOver() {
   if(playerScore == 5 || computerScore == 5){
       return true;
     }
   }
-
+//Displays who won the whole game
   function checkWinner(){
     if (playerScore == 5) {
       rpsMsg.textContent = "You have won the game! Select Rock, Paper, or Scissors to restart game.";
@@ -61,7 +61,7 @@ function gameOver() {
       rpsMsg.textContent = "You have lost the game! Select Rock, Paper, or Scissors to restart game.";
     }
   }
-
+//Restart function so that the player can continue playing
   function gameRestart(){
   playerScore = 0
   computerScore = 0
@@ -71,7 +71,6 @@ function gameOver() {
   }
 
 //Links to UI
-
 const rockBtn = document.getElementById('rockBtn');
 const paperBtn = document.getElementById('paperBtn');
 const scissorsBtn = document.getElementById('scissorsBtn');
@@ -83,7 +82,7 @@ rockBtn.addEventListener("click", () => clickStart("rock"));
 paperBtn.addEventListener("click", () => clickStart("paper"));
 scissorsBtn.addEventListener("click", () => clickStart("scissors"));
 
-
+//Starts the game of Rock, Paper, Scissors
 function clickStart(playerSelection) {
   if(gameOver()){
     gameRestart();
