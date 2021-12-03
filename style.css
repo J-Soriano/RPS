@@ -1,5 +1,3 @@
-/*:root {
-} */
 
 * {
   color: white;
@@ -27,8 +25,6 @@ h1{
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-
 }
 
 .playerSection{
@@ -77,8 +73,6 @@ button {
     background-image: url("imgs/rps-rock.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    /*background-size: contain;*/
-    /**/
 }
 #paperBtn {
     background-image: url("imgs/rps-paper.jpg");
@@ -87,7 +81,6 @@ button {
 #scissorsBtn {
     background-image: url("imgs/rps-scissors.jpg");
     background-size: cover;
-
 }
 
 .footer {
